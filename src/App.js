@@ -6,7 +6,7 @@ export default function App() {
     <div className="App">
       <div className="container">
         <Weather />
-        <footer>
+        <footer id="footer">
           This project created by Khrystyna Prokopechko and is{" "}
           <a
             href="https://github.com/prokopechkok/react-weather-app"

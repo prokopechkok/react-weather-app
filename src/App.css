@@ -1,1 +1,11 @@
-
+.App {
+  max-width: 600px;
+  margin: 20px auto;
+  font-family: "Poppins", sans-serif;
+  color: #132743;
+}
+.App #footer {
+  text-decoration: none;
+  margin: 10px 0;
+  font-size: smaller;
+}

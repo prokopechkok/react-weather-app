@@ -29,10 +29,7 @@ li {
 li:first-letter {
   text-transform: capitalize;
 }
-.weather-app-wrapper {
-  max-width: 600px;
-  margin: 30px auto;
-}
+
 .weather-app {
   padding: 20px;
   border: 1px solid #dadde1;
@@ -118,8 +115,4 @@ li:first-letter {
 #fahrenheit-link {
   text-decoration: none;
   color: #132743;
-}
-#footer {
-  text-decoration: none;
-  margin-left: 5px;
 }
