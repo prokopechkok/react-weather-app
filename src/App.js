@@ -7,14 +7,14 @@ export default function App() {
       <div className="container">
         <Weather defaultCity="Lviv" />
         <footer id="footer">
-          This project created by Khrystyna Prokopechko and is{" "}
           <a
             href="https://github.com/prokopechkok/react-weather-app"
             target="_blank"
             rel="noreferrer"
           >
-            open-sourced on GitHub
-          </a>
+            Open-source code
+          </a>{" "}
+          by Khrystyna Prokopechko
         </footer>
       </div>
     </div>
