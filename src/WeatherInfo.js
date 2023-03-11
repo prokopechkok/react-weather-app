@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import FormattedDate from "./FormattedDate";
 import axios from "axios";
+import WeatherTemperature from "./WeatherTemperature";
 
 export default function WeatherInfo(props) {
   const [city, setCity] = useState(props.defaultCity);
@@ -47,18 +48,7 @@ export default function WeatherInfo(props) {
                     id="icon"
                     className="float-left"
                   />
-                  <span className="float-left">
-                    <strong id="temperature">{weatherData.temperature}</strong>
-                    <span className="units">
-                      <a href="/" id="celsius-link" className="active">
-                        °C
-                      </a>{" "}
-                      |
-                      <a href="/" id="fahrenheit-link">
-                        °F
-                      </a>
-                    </span>
-                  </span>
+                  <WeatherTemperature celsius={weatherData.temperature} />
                 </div>
               </div>
               <div className="col-6">
