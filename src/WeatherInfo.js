@@ -95,9 +95,6 @@ export default function WeatherInfo(props) {
                 </form>
               </div>
             </div>
-            <div className="weather-forecast" id="forecast">
-              forecast
-            </div>
           </div>
         </div>
       </div>

@@ -47,7 +47,7 @@ li:first-letter {
 }
 .weather-temperature img {
   position: relative;
-  top: -18px;
+  top: -5px;
   margin-top: 0;
   margin-right: 5px;
   height: 64px;
@@ -71,25 +71,7 @@ li:first-letter {
 .weather-temperature .active:hover {
   text-decoration: none;
 }
-.weather-forecast {
-  margin-top: 15px;
-  text-align: center;
-  color: #132743;
-}
-.weather-forecast-date {
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 18 px;
-}
-.weather-forecast-temperatures {
-  padding: 0;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 17 px;
-}
-.weather-forecast-temperature-min {
-  opacity: 0.7;
-}
+
 .btn-primary {
   background: #132743;
   border-color: none;
@@ -99,7 +81,6 @@ li:first-letter {
   margin: 0 auto;
   position: relative;
   top: 7px;
-
   font-weight: 200;
 }
 .btn-primary:hover {
