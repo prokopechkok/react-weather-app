@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import FormattedDate from "./FormattedDate";
 import axios from "axios";
+import WeatherIcon from "./WeatherIcon";
 import WeatherTemperature from "./WeatherTemperature";
+import WeatherForecast from "./WeatherForecast";
 
 export default function WeatherInfo(props) {
   const [city, setCity] = useState(props.defaultCity);
@@ -10,7 +12,8 @@ export default function WeatherInfo(props) {
   function displayForecast(response) {
     setWeatherData({
       city: response.data.name,
-      iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      coordinates: response.data.coord,
+      icon: response.data.weather[0].icon,
       temperature: Math.round(response.data.main.temp),
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
@@ -42,22 +45,17 @@ export default function WeatherInfo(props) {
             <div className="row">
               <div className="col-6">
                 <div className="clearfix weather-temperature">
-                  <img
-                    src={weatherData.iconUrl}
-                    alt="cloudy"
-                    id="icon"
-                    className="float-left"
-                  />
+                  <WeatherIcon code={weatherData.icon} size={52} />
                   <WeatherTemperature celsius={weatherData.temperature} />
                 </div>
               </div>
               <div className="col-6">
                 <ul>
                   <li>
-                    Humidity: <span id="humidity">{weatherData.humidity}</span>%
+                    Humidity: <span>{weatherData.humidity}</span>%
                   </li>
                   <li>
-                    Wind: <span id="wind">{weatherData.wind}</span> m/h
+                    Wind: <span>{weatherData.wind}</span> m/h
                   </li>
                 </ul>
               </div>
@@ -65,24 +63,23 @@ export default function WeatherInfo(props) {
             <div className="row">
               <div className="col-6">
                 <div className="overview">
-                  <h1 id="city">{weatherData.city}</h1>
+                  <h1>{weatherData.city}</h1>
                   <ul>
                     <li>
-                      <span id="date">
+                      <span>
                         <FormattedDate date={weatherData.date} />
                       </span>
                     </li>
-                    <li id="description">{weatherData.description}</li>
+                    <li>{weatherData.description}</li>
                   </ul>
                 </div>
               </div>
               <div className="col-6">
-                <form id="search-form" onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit}>
                   <input
                     type="search"
                     placeholder="Type a city..."
                     className="form-control"
-                    id="city-input"
                     autoComplete="off"
                     autoFocus="on"
                     onChange={handleCityChange}
@@ -95,6 +92,10 @@ export default function WeatherInfo(props) {
                 </form>
               </div>
             </div>
+            <WeatherForecast
+              data={weatherData}
+              coordinates={weatherData.coordinates}
+            />
           </div>
         </div>
       </div>
